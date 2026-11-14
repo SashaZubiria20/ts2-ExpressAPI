@@ -5,14 +5,16 @@
     https://expressjs.com/
 */
 
-const express = require('express');
-const app = express();
-const port = 3000;
+import express, { type Express, type Request, type Response } from 'express';
 
-app.get('/', (req, res) => {
+const app: Express = express();
+
+app.get('/', (req: Request, res: Response) => {
     res.send('Hello World!');
 });
 
+const port = 3000;
+
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`Servidor corriendo en http://localhost:${port}`);
 });
